@@ -1,0 +1,53 @@
+#######################################
+# Syntax Coloring Map For AIS_4G_EXTENSION_BOARD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+AIS_4G_EXTENSION_BOARD KEYWORD1
+IO_EXPANDER  KEYWORD1
+SOIL_MOISTURE KEYWORD1
+SHT20_X_SENSOR  KEYWORD1
+RTC_PCF8563  KEYWORD1
+LIGHT_SENSOR  KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+extRTC  KEYWORD2
+extSHT20  KEYWORD2
+extSoilMoisture  KEYWORD2
+extLightMeter  KEYWORD2
+begin   KEYWORD2
+setTime  KEYWORD2
+getTime  KEYWORD2
+get_tm_Time  KEYWORD2
+getDateTimeString  KEYWORD2
+extConfig  KEYWORD2
+calibrateSensor  KEYWORD2
+readRawMillivolt  KEYWORD2
+readMoisetureLevel  KEYWORD2
+readTemperature  KEYWORD2
+readHumidity  KEYWORD2
+heatSensor  KEYWORD2
+isSensorHeatOn  KEYWORD2
+setHeaterLv  KEYWORD2
+getHeaterLv  KEYWORD2
+readLight  KEYWORD2
+configure  KEYWORD2
+isAvailable  KEYWORD2
+read  KEYWORD2
+set  KEYWORD2
+setMode  KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+AIS_4G_EXTENSION_BOARD LITERAL1
+IO_EXPANDER  LITERAL1
+SOIL_MOISTURE LITERAL1
+SHT20_X_SENSOR  LITERAL1
+RTC_PCF8563  LITERAL1
+LIGHT_SENSOR  LITERAL1
+#######################################
