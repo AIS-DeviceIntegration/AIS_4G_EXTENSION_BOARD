@@ -17,7 +17,7 @@ public:
     void begin(AIN anlogINPUT);
     void calibrateSensor(int WET_MILLIVOLT, int DRY_MILLIVOLT);
     float readRawMillivolt();
-    float readMoisetureLevel();
+    float readMoistureLevel();
 };
 extern SOIL_MOISTURE extSoilMoisture;
 

@@ -14,6 +14,6 @@ void setup()
 void loop()
 {
     Serial.print("Soil Moisture Level: ");
-    Serial.println(extSoilMoisture.readMoisetureLevel(), 1);
+    Serial.println(extSoilMoisture.readMoistureLevel(), 1);
     delay(2000);
 }

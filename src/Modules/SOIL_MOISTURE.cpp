@@ -47,7 +47,7 @@ float SOIL_MOISTURE::readRawMillivolt()
     return (float)analogRead(this->_analogPin);
 }
 
-float SOIL_MOISTURE::readMoisetureLevel()
+float SOIL_MOISTURE::readMoistureLevel()
 {
     int rawAnalog = readRawMillivolt();
     float moistureLevel = map(rawAnalog, this->_dry_millivolt, this->_wet_millivolt, 0, 100) / 10.0;

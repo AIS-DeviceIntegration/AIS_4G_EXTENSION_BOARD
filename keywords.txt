@@ -27,7 +27,7 @@ getDateTimeString  KEYWORD2
 extConfig  KEYWORD2
 calibrateSensor  KEYWORD2
 readRawMillivolt  KEYWORD2
-readMoisetureLevel  KEYWORD2
+readMoistureLevel  KEYWORD2
 readTemperature  KEYWORD2
 readHumidity  KEYWORD2
 heatSensor  KEYWORD2

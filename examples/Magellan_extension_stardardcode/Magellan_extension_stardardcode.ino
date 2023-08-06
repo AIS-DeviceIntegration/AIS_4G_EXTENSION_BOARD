@@ -80,7 +80,7 @@ void loop()
         float LightMeter = extLightMeter.readLight();
         float Sht20Temp = extSHT20.readTemperature();
         float Sht20Humid = extSHT20.readHumidity();
-        float SoilMoisture = extSoilMoisture.readMoisetureLevel();
+        float SoilMoisture = extSoilMoisture.readMoistureLevel();
         float BoardTemp = magel.builtInSensor.readTemperature();
         float BoardHumid = magel.builtInSensor.readHumidity();
         if (magel.gps.available())
