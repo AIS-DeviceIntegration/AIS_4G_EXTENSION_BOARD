@@ -1,3 +1,4 @@
+![Library Version](https://img.shields.io/badge/Extension_4G_Board_Version-1.0.0-green)
 # AIS_4G_EXTENSION_BOARD
 library for 4G extension board v1.0 
 Support sensor 
