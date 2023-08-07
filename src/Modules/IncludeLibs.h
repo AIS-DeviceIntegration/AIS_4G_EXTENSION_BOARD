@@ -36,5 +36,6 @@ enum class DIGITAL
 #include "../Includes/PCA9557-arduino/src/PCA9557.h"
 #include "../Includes/PCF8563-Arduino-Library-master/src/PCF8563.h"
 #include "../Includes/SHT2x/SHT2x.h"
+#include "../Includes/DFRobot_SHT20/DFRobot_SHT20.h"
 
 #endif

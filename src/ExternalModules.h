@@ -8,5 +8,6 @@
 #include "Modules/LIGHT_SENSOR.h"
 #include "Modules/SOIL_MOISTURE.h"
 #include "Modules/SHT20_X_SENSOR.h"
+#include "Modules/SHT20_SENSOR.h"
 
 #endif

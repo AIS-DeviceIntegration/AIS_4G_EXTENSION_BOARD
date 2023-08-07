@@ -21,5 +21,5 @@ public:
     bool setHeaterLv(uint8_t level);  // level = 0..15
     bool getHeaterLv(uint8_t &level); // 0..15
 };
-extern SHT20_X_SENSOR extSHT20;
+extern SHT20_X_SENSOR extSHT20X;
 #endif

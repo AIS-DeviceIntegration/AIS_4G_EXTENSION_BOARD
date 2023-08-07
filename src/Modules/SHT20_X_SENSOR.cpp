@@ -3,6 +3,7 @@
 
 void SHT20_X_SENSOR::begin()
 {
+    Wire.begin();
     this->_sht2x->begin();
     uint8_t stat = _sht2x->getStatus();
 }
@@ -23,13 +24,13 @@ bool SHT20_X_SENSOR::heatSensor(bool enable)
     bool status = false;
     if (enable)
     {
-       status = this->_sht2x->heatOn();
+        status = this->_sht2x->heatOn();
     }
     else
     {
-       status = this->_sht2x->heatOff();
+        status = this->_sht2x->heatOff();
     }
-    return  status;
+    return status;
 }
 
 bool SHT20_X_SENSOR::isSensorHeatOn()
