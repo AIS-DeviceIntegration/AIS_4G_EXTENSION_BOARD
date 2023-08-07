@@ -6,8 +6,8 @@ MAGELLAN_SIM7600E_MQTT magel;
 AIS_4G_EXTENSION_BOARD extBoard;
 
 unsigned long time_previous = 0; // previous time for using timer with millis()
-#define DRY_MILLIVOIL 2038 // please calibrate by read rawMillivolt on dry and wet for accuracy
-#define WET_MILLIVOIL 1675 // please calibrate by read rawMillivolt on dry and wet for accuracy
+#define DRY_MILLIVOLT 2038 // please calibrate by read rawMillivolt on dry and wet for accuracy
+#define WET_MILLIVOLT 1675 // please calibrate by read rawMillivolt on dry and wet for accuracy
 
 void setup()
 {
@@ -15,7 +15,7 @@ void setup()
     extBoard.begin();                                             // initialize extension board
     extLightMeter.begin();                                        // initialize [BH1750]light meter sensor
     extSHT20.begin();                                             // initialize SHT20-x sensor
-    extSoilMoisture.begin(AIN::A1, WET_MILLIVOIL, DRY_MILLIVOIL); // initialize soilMoisture sensor connect on "A1" with value from calibrate dry, wet
+    extSoilMoisture.begin(AIN::A1, WET_MILLIVOLT, DRY_MILLIVOLT); // initialize soilMoisture sensor connect on "A1" with value from calibrate dry, wet
     
     setting.endpoint = "device-entmagellan.ais.co.th";
     setting.clientBufferSize = defaultOTABuffer;
