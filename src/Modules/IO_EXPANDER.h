@@ -4,7 +4,7 @@
 #include "IncludeLibs.h"
 #include "../ExtBoardGPIO.h"
 #define IO_Ex_verMajor 1
-#define IO_Ex_verMinor 0
+#define IO_Ex_verMinor 1
 #define IO_Ex_verRevision 0
 
 class IO_EXPANDER : private PCA9557
@@ -21,6 +21,11 @@ public:
     bool read(DIGITAL digitalIO);
     void setMode(DIGITAL digitalIO, int mode);
     void begin();
+
+    // 1.1.0
+    int getPinAIN(AIN analogINPUT);
+    int getPinDIO(DIGITAL digitalIO);
+    int getPinDIN(DIN digitalINPUT);
 
 private:
     PCA9557 *_ext;

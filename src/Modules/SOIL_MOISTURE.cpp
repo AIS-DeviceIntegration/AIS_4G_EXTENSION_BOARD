@@ -54,3 +54,11 @@ float SOIL_MOISTURE::readMoistureLevel()
     float result = mathCamp(moistureLevel, 0.0f, 10.0f);
     return result;
 }
+
+int SOIL_MOISTURE::readMoisturePercent()
+{
+    int rawAnalog = readRawMillivolt();
+    float moistureLevel = map(rawAnalog, this->_dry_millivolt, this->_wet_millivolt, 0, 100);
+    int result = mathCamp(moistureLevel, 0.0f, 100.0f);
+    return result;
+}

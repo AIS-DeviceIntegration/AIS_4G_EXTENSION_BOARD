@@ -122,13 +122,16 @@ void IO_EXPANDER::set(AIN analogIO, int value)
     }
 }
 
-bool readOnBoard(int _pin){
+bool readOnBoard(int _pin)
+{
     return digitalRead(_pin);
 }
-void writeOnBoard(int _pin, int value){
+void writeOnBoard(int _pin, int value)
+{
     digitalWrite(_pin, value);
 }
-void setOnBoard(int _pin, int mode){
+void setOnBoard(int _pin, int mode)
+{
     pinMode(_pin, mode);
 }
 
@@ -161,3 +164,42 @@ void IO_EXPANDER::setMode(DIGITAL digitalIO, int mode)
         return;
     }
 }
+
+// 1.0.1
+
+/// @details get raw pin Analog
+int IO_EXPANDER::getPinAIN(AIN analogINPUT)
+{
+    if (analogINPUT == AIN::A1)
+    {
+        return A1_PIN;
+    }
+    else if (analogINPUT == AIN::A2)
+    {
+        return A2_PIN;
+    }
+    return -1;
+}
+
+/// @details get raw pin Digital
+int IO_EXPANDER::getPinDIO(DIGITAL digitalIO)
+{
+    if (digitalIO == DIGITAL::D3)
+    {
+        return D3_PIN;
+    }
+    return -1;
+}
+int IO_EXPANDER::getPinDIN(DIN digitalINPUT)
+{
+    if (digitalINPUT == DIN::D1)
+    {
+        return D1_PIN;
+    }
+    else if (digitalINPUT == DIN::D2)
+    {
+        return D2_PIN;
+    }
+    return -1;
+}
+
