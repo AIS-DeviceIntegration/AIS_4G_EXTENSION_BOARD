@@ -5,9 +5,9 @@
 
 MAGELLAN_SIM7600E_MQTT magel;
 AIS_4G_EXTENSION_BOARD extBoard;
-
-#define DRY_MILLIVOLT 1600       // please calibrate by read rawMillivolt on dry and wet for accuracy
-#define WET_MILLIVOLT 800        // please calibrate by read rawMillivolt on dry and wet for accuracy
+// dry 1600 wet 800 for normal connect if jump pin analog and digital together use dry 2000 wet 1750 R adjust left side
+#define DRY_MILLIVOLT 2000       // please calibrate by read rawMillivolt on dry and wet for accuracy
+#define WET_MILLIVOLT 1750        // please calibrate by read rawMillivolt on dry and wet for accuracy
 unsigned long time_previous = 0; // previous time for using timer with millis()
 
 void setup()

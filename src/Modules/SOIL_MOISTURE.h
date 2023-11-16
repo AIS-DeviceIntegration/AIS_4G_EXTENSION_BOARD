@@ -12,20 +12,24 @@ private:
     int _wet_millivolt = 1600;
     int _dry_millivolt = 800;
 
+    // // if jump digi and ang pin together
+    // int _wet_millivolt = 2000;
+    // int _dry_millivolt = 1750;
+
 public:
     SOIL_MOISTURE(){};
     void begin(AIN anlogINPUT, int WET_MILLIVOLT, int DRY_MILLIVOLT);
     void begin(AIN anlogINPUT);
     void calibrateSensor(int WET_MILLIVOLT, int DRY_MILLIVOLT);
 
-    //1.1.0
-    //raw analog value millivolt
+    // 1.1.0
+    // raw analog value millivolt
     float readRawMillivolt();
 
-    //level range 0 - 10
+    // level range 0 - 10
     float readMoistureLevel();
 
-    //percent range 0 - 100 %
+    // percent range 0 - 100 %
     int readMoisturePercent();
 };
 extern SOIL_MOISTURE extSoilMoisture;
