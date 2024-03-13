@@ -14,7 +14,7 @@ void setup()
     Serial.begin(115200);
     extBoard.begin();                                             // initialize extension board
     extLightMeter.begin();                                        // initialize [BH1750]light meter sensor
-    extSHT20.begin();                                             // initialize SHT20-x sensor
+    extSHT20X.begin();                                             // initialize SHT20-x sensor
     extSoilMoisture.begin(AIN::A1, WET_MILLIVOIL, DRY_MILLIVOIL); // initialize soilMoisture sensor connect on "A1" with value from calibrate dry, wet
     
     setting.endpoint = "device-entmagellan.ais.co.th";
@@ -78,8 +78,8 @@ void loop()
     magel.interval(15, []()
                    {
         float LightMeter = extLightMeter.readLight();
-        float Sht20Temp = extSHT20.readTemperature();
-        float Sht20Humid = extSHT20.readHumidity();
+        float Sht20Temp = extSHT20X.readTemperature();
+        float Sht20Humid = extSHT20X.readHumidity();
         float SoilMoisture = extSoilMoisture.readMoistureLevel();
         float BoardTemp = magel.builtInSensor.readTemperature();
         float BoardHumid = magel.builtInSensor.readHumidity();
