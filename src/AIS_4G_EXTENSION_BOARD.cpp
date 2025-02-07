@@ -5,6 +5,8 @@ ConfigExtension extConfig;
 
 void AIS_4G_EXTENSION_BOARD::begin(ConfigExtension _extConfigs)
 {
+
+    Serial.println(("###### AIS_4G_EXTENSION_BOARD Library version: " + String(LIB_VERSION)).c_str());
     if (_extConfigs.IOExpander)
     {
         usingIOexpand = true;

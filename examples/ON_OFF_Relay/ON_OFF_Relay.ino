@@ -2,7 +2,7 @@
 #include <AIS_4G_EXTENSION_BOARD.h>
 
 AIS_4G_EXTENSION_BOARD extBoard;
-
+#define RELAY_SIZE 4
 void setup()
 {
     Serial.begin(115200);
@@ -21,7 +21,7 @@ void loop()
     extBoard.set(RELAY::CH4, HIGH);
     delay(1000);
    
-    Serial.print("RELAY ON ALL");
+    Serial.println("RELAY ON ALL");
     Serial.print("RELAY1: ");
     Serial.println(extBoard.read(RELAY::CH1));
     Serial.print("RELAY2: ");
@@ -41,7 +41,7 @@ void loop()
     extBoard.set(RELAY::CH4, LOW);
     delay(1000);
     
-    Serial.print("RELAY OFF ALL");
+    Serial.println("RELAY OFF ALL");
     Serial.print("RELAY1: ");
     Serial.println(extBoard.read(RELAY::CH1));
     Serial.print("RELAY2: ");

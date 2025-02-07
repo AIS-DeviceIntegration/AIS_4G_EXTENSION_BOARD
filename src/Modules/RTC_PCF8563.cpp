@@ -2,11 +2,11 @@
 #include <Arduino.h>
 #include "RTC_PCF8563.h"
 
-RTC_PCF8563::RTC_PCF8563()
+EXT_RTC_PCF8563::EXT_RTC_PCF8563()
 {
 }
 
-void RTC_PCF8563::begin()
+void EXT_RTC_PCF8563::begin()
 {
     Wire.begin();
     _rtc.init();
@@ -14,7 +14,7 @@ void RTC_PCF8563::begin()
     _rtc.startClock(); // start the clock
 }
 
-void RTC_PCF8563::setTime(Time _time)
+void EXT_RTC_PCF8563::setTime(Time _time)
 {
     _rtc.setDay(_time.day);
     _rtc.setMonth(_time.month);
@@ -24,12 +24,12 @@ void RTC_PCF8563::setTime(Time _time)
     _rtc.setSecond(_time.second);
 }
 
-Time RTC_PCF8563::getTime()
+Time EXT_RTC_PCF8563::getTime()
 {
     return _rtc.getTime();
 }
 
-String RTC_PCF8563::getDateTimeString()
+String EXT_RTC_PCF8563::getDateTimeString()
 {
     Time t = _rtc.getTime();
     char buffer[100];
@@ -38,7 +38,7 @@ String RTC_PCF8563::getDateTimeString()
     return dateTime;
 }
 
-tm RTC_PCF8563::get_tm_Time()
+tm EXT_RTC_PCF8563::get_tm_Time()
 {
     tm timeinfo;
     Time timeData = getTime();
