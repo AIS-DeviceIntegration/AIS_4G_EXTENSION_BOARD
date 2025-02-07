@@ -18,7 +18,7 @@ void setup()
     extLightMeter.begin();                                        // initialize [BH1750]light meter sensor
     extSoilMoisture.begin(AIN::A1, WET_MILLIVOLT, DRY_MILLIVOLT); // initialize soilMoisture sensor connect on "A1" with value from calibrate dry, wet
 
-    setting.endpoint = "device-entmagellan.ais.co.th";
+    setting.endpoint = "device-entmagellan.ais.co.th"; //comment this line if device register on web domain  https://magellan.ais.co.th
     setting.clientBufferSize = defaultOTABuffer;
     magel.begin(setting);
 

@@ -6,10 +6,10 @@
 #define rtc_verMinor 0
 #define rtc_verRevision 0
 
-class RTC_PCF8563 : public PCF8563
+class EXT_RTC_PCF8563 : public PCF8563
 {
 public:
-    RTC_PCF8563();
+    EXT_RTC_PCF8563();
     void begin();
     void setTime(Time times);
     Time getTime();
@@ -19,6 +19,7 @@ private:
     PCF8563 _rtc;
 protected:
 };
-extern RTC_PCF8563 extRTC;
+// extern RTC_PCF8563 extRTC;
+extern EXT_RTC_PCF8563 extRTC;
 
 #endif

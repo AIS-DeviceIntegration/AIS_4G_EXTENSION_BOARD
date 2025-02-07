@@ -51,4 +51,3 @@ SHT20_X_SENSOR  LITERAL1
 RTC_PCF8563  LITERAL1
 LIGHT_SENSOR  LITERAL1
 #######################################
-//ver1.0.0
