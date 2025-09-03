@@ -32,3 +32,26 @@ String AIS_4G_EXTENSION_BOARD::getDateTimeString()
 {
     return extRTC.getDateTimeString();
 }
+
+bool AIS_4G_EXTENSION_BOARD::checkExtension()
+{
+    this->foundExtension = false;
+    Wire.begin();
+    for (byte addr = 0x01; addr < 0x7F; addr++)
+    {
+        Wire.beginTransmission(addr);
+        if (Wire.endTransmission() == 0 && addr == 0x19)
+        {
+            this->foundExtension = true;
+            
+            break;
+        }
+    }
+    Serial.println(F("====Check Extension available===="));
+    Serial.println(this->foundExtension ? F("[✓] - Found Extension Board!!") : F("[x] - No Extension Board Found!!"));
+    return this->foundExtension;
+}
+bool AIS_4G_EXTENSION_BOARD::isExtensionAvailable()
+{
+    return this->foundExtension;
+}
