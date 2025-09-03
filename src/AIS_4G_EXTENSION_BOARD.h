@@ -8,7 +8,7 @@
 
 #define LIB_Major 1
 #define LIB_Minor 2
-#define LIB_Feature 1
+#define LIB_Feature 0
 #define LIB_VERSION String(LIB_Major) + "." + String(LIB_Minor) + "." + String(LIB_Feature)
 
 struct ConfigExtension
