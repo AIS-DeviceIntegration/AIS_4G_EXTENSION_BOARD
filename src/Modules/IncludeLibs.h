@@ -31,6 +31,12 @@ enum class DIGITAL
     D3,
 };
 
+enum class LCD
+{
+    BL,
+    RST,
+};
+
 
 #include "../Includes/BH1750/src/BH1750.h"
 #include "../Includes/PCA9557-arduino/src/PCA9557.h"

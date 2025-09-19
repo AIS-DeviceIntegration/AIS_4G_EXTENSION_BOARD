@@ -25,6 +25,8 @@ void IO_EXPANDER::begin()
     _ext->digitalWrite(Relay2, OUTPUT);
     _ext->digitalWrite(Relay3, OUTPUT);
     _ext->digitalWrite(Relay4, OUTPUT);
+    _ext->pinMode(LCD_BL, OUTPUT);
+    _ext->pinMode(LCD_RST, OUTPUT);
 }
 
 bool IO_EXPANDER::read(RELAY RelayChannel)
@@ -203,3 +205,47 @@ int IO_EXPANDER::getPinDIN(DIN digitalINPUT)
     return -1;
 }
 
+void IO_EXPANDER::set(LCD lcdIO, int value)
+{
+    switch (lcdIO)
+    {
+    case LCD::BL:
+        _ext->digitalWrite(LCD_BL, value);
+        break;
+    case LCD::RST:
+        _ext->digitalWrite(LCD_RST, value);
+        break;
+    default:
+        break;
+    }
+}
+
+bool IO_EXPANDER::read(LCD lcdIO)
+{
+    bool status = false;
+    switch (lcdIO)
+    {
+    case LCD::BL:
+        status = !_ext->digitalRead(LCD_BL);
+        break;
+    case LCD::RST:
+        status = !_ext->digitalRead(LCD_RST);
+        break;
+    default:
+        break;
+    }
+    return status;
+}
+
+int IO_EXPANDER::getPinLCD(LCD lcd)
+{
+    if (lcd == LCD::BL)
+    {
+        return LCD_BL;
+    }
+    else if (lcd == LCD::RST)
+    {
+        return LCD_RST;
+    }
+    return -1;
+}
