@@ -6,14 +6,16 @@
 MAGELLAN_SIM7600E_MQTT magel;
 AIS_4G_EXTENSION_BOARD extBoard;
 // dry 1600 wet 800 for normal connect if jump pin analog and digital together use dry 2000 wet 1750 R adjust left side
-#define DRY_MILLIVOLT 2038 // please calibrate by read rawMillivolt on dry and wet for accuracy
-#define WET_MILLIVOLT 1675 // please calibrate by read rawMillivolt on dry and wet for accuracy
+#define DRY_MILLIVOLT 2038       // please calibrate by read rawMillivolt on dry and wet for accuracy
+#define WET_MILLIVOLT 1675       // please calibrate by read rawMillivolt on dry and wet for accuracy
 unsigned long time_previous = 0; // previous time for using timer with millis()
-
+#define LED_Board 15
 void setup()
 {
     Serial.begin(115200);
     RS485.begin(9600, SERIAL_8N1);
+    pinMode(LED_Board, OUTPUT);
+    digitalWrite(LED_Board, LOW);
     if (extBoard.checkExtension())
     {
         extBoard.begin();                                             // initialize extension board
@@ -76,6 +78,17 @@ void setup()
                                  extBoard.set(RELAY::CH4, LOW); // set status ON OFF Relay Channel 4
                              }
                          }
+                         if (key == "BoardLED")
+                         {
+                             if (value == "1")
+                             {
+                                 digitalWrite(LED_Board, HIGH); // turn ON Board LED
+                             }
+                             else
+                             {
+                                 digitalWrite(LED_Board, LOW); // turn OFF Board LED
+                             }
+                         }
                          magel.control.ACK(key, value); // ACKNOWLEDGE Control back to magellan
                      });
 
@@ -84,6 +97,7 @@ void setup()
     magel.sensor.add("Relay2", 0);
     magel.sensor.add("Relay3", 0);
     magel.sensor.add("Relay4", 0);
+    magel.sensor.add("BoardLED", 0);
     magel.sensor.report();
 }
 
@@ -165,6 +179,7 @@ void loop()
             magel.sensor.add("Relay2", statusRelay2);
             magel.sensor.add("Relay3", statusRelay3);
             magel.sensor.add("Relay4", statusRelay4);
+            magel.sensor.add("BoardLED", digitalRead(LED_Board));
             magel.sensor.report();
         }
     }
