@@ -21,11 +21,16 @@ public:
     bool read(DIGITAL digitalIO);
     void setMode(DIGITAL digitalIO, int mode);
     void begin();
-
+    
     // 1.1.0
     int getPinAIN(AIN analogINPUT);
     int getPinDIO(DIGITAL digitalIO);
     int getPinDIN(DIN digitalINPUT);
+
+    // 1.2.1
+    bool read(LCD lcdIO);
+    void set(LCD lcdIO, int value);
+    int getPinLCD(LCD lcd);
 
 private:
     PCA9557 *_ext;
