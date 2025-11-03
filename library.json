@@ -1,0 +1,31 @@
+{
+  "name": "AIS_4G_EXTENSION_BOARD",
+  "version": "1.2.2",
+  "description": "AIS 4G Extension board kit Library; provides basic functions for AIS 4G extension board with sensor kit. Compatible with AIS 4G Board (ESP32) Magellan.",
+  "keywords": [
+    "AIS",
+    "4G",
+    "ESP32",
+    "Magellan",
+    "Sensor",
+    "Communication"
+  ],
+  "authors": [
+    {
+      "name": "AIS Magellan",
+      "email": "magellan@ais.co.th",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AIS-DeviceIntegration/AIS_4G_EXTENSION_BOARD.git"
+  },
+  "frameworks": ["arduino"],
+  "platforms": ["espressif32"],
+  "headers": ["AIS_4G_EXTENSION_BOARD.h"],
+  "examples": [
+    "examples/*/*.ino",
+    "examples/*.ino"
+  ]
+}
